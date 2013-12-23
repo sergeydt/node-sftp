@@ -1,0 +1,52 @@
+{
+  "name": "sftp",
+  "version": "0.0.5",
+  "description": "SFTP implementation for node.js",
+  "author": {
+    "name": "ajax.org B.V.",
+    "email": "info@ajax.org"
+  },
+  "contributors": [
+    {
+      "name": "Mike de Boer",
+      "email": "mike@c9.io"
+    },
+    {
+      "name": "Fabian Jakobs",
+      "email": "fabian@c9.io"
+    }
+  ],
+  "homepage": "http://github.com/ajaxorg/node-sftp",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/ajaxorg/node-sftp.git"
+  },
+  "engine": {
+    "node": ">=0.4.x"
+  },
+  "dependencies": {
+    "asyncjs": "0.0.9",
+    "pty.js": "0.2.2"
+  },
+  "main": "./lib/sftp.js",
+  "scripts": {
+    "test": "node test/sftp.js && node test/ssh.js"
+  },
+  "licenses": [
+    {
+      "type": "The MIT License",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "readme": "# node-sftp\n\nExample of writing a simple file to sftp location:\n\n```js\nvar sftp = require('node-sftp');\nvar sftp = new sftp({\n\t\thost: 'hostname',\n\t\thome: \"/home/user/test\",\n\t\tusername: \"user\",\n\t\tpassword: \"pass\",\n\t\tport: \"22\"\n\t},\n\tfunction(err) {\n\t\t//Error\n\t\tif (err) throw err;\n\n\t\t//Success\n\t\tconsole.log(\"Connected\");\n\n\t\t//Write sample file\n\t\tsftp.writeFile(\"message.txt\", \"Hello Node\", \"\", function(err) {\n\t\t\tif (err) throw err;\n\t\t\tconsole.log(\"It's saved!\");\n\t\t});\n});\n```\n\nMore info soon...\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/ajaxorg/node-sftp/issues"
+  },
+  "_id": "sftp@0.0.5",
+  "dist": {
+    "shasum": "2d232589d53e39547ea35ed56b646bf2741ba03b"
+  },
+  "_resolved": "git+https://github.com/sergeydt/node-sftp.git#086ae51eb25a60122a09ee678326e62c71c845b2",
+  "_from": "sftp@git+https://github.com/sergeydt/node-sftp.git"
+}
